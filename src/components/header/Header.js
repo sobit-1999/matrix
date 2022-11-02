@@ -3,20 +3,19 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import {
-  Button,
   Card,
   Divider,
-  Drawer,
   Grid,
-  Switch,
   Tooltip,
   tooltipClasses,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Link } from "react-router-dom";
-import { CallOutlined, Instagram, Telegram } from "@mui/icons-material";
-import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+import { CallOutlined, Instagram, Menu, Telegram } from "@mui/icons-material";
 import logo from "../images/logo.png";
+import SidebarAppPhone from "../sidebar/Sidebar";
+
+
 const LightTooltip = styled(({ className, ...props }) => (
   <Tooltip {...props} classes={{ popper: className }} />
 ))(({ theme }) => ({
@@ -44,15 +43,15 @@ export default function Header() {
       >
         <Grid container spacing={2}>
           <Grid item xs={3} textAlign="left">
-            <img src={logo} alt="logo" />
+            <img src={logo} alt="logo" width="150px"/>
           </Grid>
           <Grid
             item
             xs={7}
             sx={{
-              display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              display: {xs: "none", md: "flex"}
             }}
           >
             {Category.map((item, i) => {
@@ -166,7 +165,8 @@ export default function Header() {
           </Grid>
           <Grid
             item
-            xs={2}
+            xs={9}
+            md={2}
             sx={{
               display: "flex",
               justifyContent: "right",
@@ -224,10 +224,20 @@ export default function Header() {
                   padding: "5px 30px",
                   borderRadius: "100px",
                   cursor: "pointer",
+                  display: {xs: "none", md: "block"}
                 }}
               >
                 Записаться
               </Typography>
+              {Category.map((item, i) => {
+                    return (
+                      <>
+                        <SidebarAppPhone 
+                        data={item} i={i} />
+                        
+                      </>
+                    );
+                  })}
             </Box>
           </Grid>
         </Grid>
@@ -235,23 +245,6 @@ export default function Header() {
     </Box>
   );
 }
-const contact = [
-  {
-    name: "Telefon",
-    icon: <CallOutlined sx={{ color: "rgb(12, 144, 205)" }} />,
-    link: "telefon",
-  },
-  {
-    name: "Telegram",
-    icon: <Telegram sx={{ color: "rgb(12, 144, 205)" }} />,
-    link: "telegram",
-  },
-  {
-    name: "Instagram",
-    icon: <Instagram sx={{ color: "rgb(12, 144, 205)" }} />,
-    link: "instagram",
-  },
-];
 const Category = [
   {
     categoryName: "Курсы",

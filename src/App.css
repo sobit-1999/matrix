@@ -3,11 +3,6 @@
   margin: 0;
   padding: 0;
 }
-
-.App {
-  text-align: center;
-
-}
 a{
   text-decoration: none;
   color: rgba(9, 9, 9, 0.9);
@@ -15,4 +10,9 @@ a{
 }
 a:hover{
   color: rgb(12, 144, 205);
+}
+input{
+  outline: none;
+  border: none;
+  background-color: aliceblue;
 }
