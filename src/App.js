@@ -12,7 +12,7 @@ function App() {
       <BrowserRouter>
       <Routes >
         <Route exact path="/" element={<PageHome />} />
-        <Route exact path="/foundation" element={<PageFoundation />} />
+        <Route path="/foundation" element={<PageFoundation />} />
       </Routes>
       <Footer />
       </BrowserRouter>
