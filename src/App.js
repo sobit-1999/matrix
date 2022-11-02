@@ -10,13 +10,11 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      {/* <Header /> */}
       <Routes >
         <Route exact path="/" element={<PageHome />} />
         <Route exact path="/foundation" element={<PageFoundation />} />
       </Routes>
-      {/* <Footer /> */}
-      {/* <PageHome /> */}
+      <Footer />
       </BrowserRouter>
     </div>
   );
