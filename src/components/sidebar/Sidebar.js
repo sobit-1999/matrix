@@ -19,6 +19,8 @@ export default function SidebarAppPhone({data}) {
     right: false,
   });
 
+  console.log(data);
+
   const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
@@ -88,7 +90,7 @@ export default function SidebarAppPhone({data}) {
         }} primary={item.catalogName} />
         <Divider />
         {item.catalogLink.map((item2, i2 ) =>{return (
-            <Link  key={i2} to={item.link}>
+            <Link  key={i2} to={item2.link}>
             <ListItemText
       onClick={toggleDrawer(anchor, false)}
        sx={{ pl: 4, 
