@@ -3,12 +3,12 @@ import React from "react";
 import imgHome2 from "../../images/Rectangle.png";
 
 import icon from "../../images/icon5.png";
-import icon1 from "../../images/icon11.png";
-import icon2 from "../../images/icon22.png";
-import icon3 from "../../images/icon33.png";
-import icon4 from "../../images/icon44.png";
-import icon5 from "../../images/icon55.png";
-import icon6 from "../../images/icon66.png";
+import icon1 from "../../images/Icon11.png";
+import icon2 from "../../images/Icon22.png";
+import icon3 from "../../images/Icon33.png";
+import icon4 from "../../images/Icon44.png";
+import icon5 from "../../images/Icon55.png";
+import icon6 from "../../images/Icin66.png";
 import { styled } from "@mui/material/styles";
 import Paper2 from "@mui/material/Paper";
 import { ArrowForward } from "@mui/icons-material";
