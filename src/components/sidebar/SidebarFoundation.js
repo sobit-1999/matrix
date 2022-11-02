@@ -14,7 +14,7 @@ import { Clear, ExpandLess, ExpandMore, Menu } from '@mui/icons-material';
 import { Collapse, IconButton, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-export default function SidebarAppPhone({data}) {
+export default function SidebarFoundation({data}) {
   const [state, setState] = React.useState({
     right: false,
   });
@@ -62,62 +62,28 @@ export default function SidebarAppPhone({data}) {
         >
             <Clear />
         </IconButton>
-      <ListItemButton onClick={handleClick}
-      sx={{px: 5,
-        background: "green",
-        padding: "5px 20px",
-        borderRadius: 4,
-        color: "#fff",
-        mx: 5,
-    ":hover": {
-        background: "green",
-    }
-    }}
-      >
-        <ListItemText 
-        primary={data.categoryName} />
-        {open ? <ExpandLess /> : <ExpandMore />}
-      </ListItemButton>
-      {data.catalog.map((item, i) => {return (
-          <Collapse key={i} in={open} timeout="auto" unmountOnExit>
-        <List 
-        sx={{mb:5}}
-        component="div" disablePadding>
-            <ListItemText sx={{ pl: 4,
-            textAlign: "left"
-        }} primary={item.catalogName} />
-        <Divider />
-        {item.catalogLink.map((item2, i2 ) =>{return (
-            <Link  key={i2} to={item.link}>
-            <ListItemText
-      onClick={toggleDrawer(anchor, false)}
-       sx={{ pl: 4, 
-                textAlign: "left"
-            }} primary={i2+1+" " + item2.name} />
-            </Link>
-       ) })}
-        </List>
-      </Collapse>
-          )})}
-                  <ListItemText sx={{mx: 5,
-                background: "green",
-                padding: "5px 20px",
-                borderRadius: 4,
-                color: "#fff",
-                cursor: "pointer"
-                }} primary="Контакты" />
-                <ListItemText sx={{mx: 5,
-              background: "green",
-              padding: "5px 20px",
-              borderRadius: 4,
-              color: "#fff",
-              cursor: "pointer"}} primary="FAQ" />
-              <ListItemText sx={{mx: 5,
+        
+        {data.map((item, i) => {return(
+        <ListItemButton
+        key={i}
+        sx={{px: 5,
             background: "green",
             padding: "5px 20px",
             borderRadius: 4,
             color: "#fff",
-            cursor: "pointer"}} primary="Записаться" />
+            mx: 5,
+            my: 2,
+            ":hover": {
+                background: "green",
+            }
+        }}
+        
+      onClick={toggleDrawer(anchor, false)}
+        >
+        <ListItemText 
+        primary={item} />
+        </ListItemButton>
+        )})}
     </List>
     </Box>
   );
